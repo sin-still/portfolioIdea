@@ -412,5 +412,19 @@ function dd() {
       }
     });
   }
-  
-  dd();
+dd();
+
+function rara(){
+    let contentBox = document.querySelectorAll('.contentBox')
+    let bgContent = document.querySelectorAll('.bgContent')
+
+    for(let i=0;i<contentBox.length;i++){
+        contentBox[i].addEventListener('mouseover',function(){
+            bgContent[i].style.transform=`scale(300%)`
+        })
+        contentBox[i].addEventListener('mouseleave',function(){
+            bgContent[i].style.transform=`scale(0%)`
+        })
+    }
+}
+rara()
