@@ -136,7 +136,7 @@ let currentIndex = 0;
 
 document.addEventListener('wheel', function (e) {
 
-
+    
     browser = window.navigator.userAgent.toLowerCase().indexOf('firefox');
 
     if (browser >= 0) {

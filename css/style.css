@@ -20,8 +20,8 @@ canvas{box-sizing: border-box;}
   height: 100vh;
   position: absolute;
   z-index: 999;
-  background: url(../img/22.png) center center/100%;
-  filter: blur(10);
+  background: url(../img/—Pngtree—city\ night\ buildings\ seaside\ buildings_6754287.png) center center/100%;
+  filter: brightness(60%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,6 +84,28 @@ html{overflow: hidden;}
 .bgContent{position: absolute; transform: scale(0) translate(-10%,-50%);left: 20%;top: 20%;transition: .5s; }
 .bgContent img{width: 100%; object-fit: cover; object-position: center;}
 
+
+
+/* section4 */
+
+.section4 .con{width: 100vw; height: 100vh; display: flex; align-items: center;}
+.section4 .sec4-slideBox{width: 2160px; height: 600px;display: grid; padding: 0 30px; box-sizing: border-box; background: #fff;
+  grid-template-columns: repeat(3, 600px);
+ 
+}
+.section4 .itemBox{width: 600px; height: 300px;display: flex;position: relative;}
+.section4 .item{width: 300px;height: 300px;background: #ddd;z-index: 2;}
+.section4 .itemBox4{margin-left: 300px;}
+.section4 .itemBox5{margin-left: 300px;}
+.section4 .itemBox6{margin-left: 300px;}
+.section4 .item-cd{border-radius: 50%; width: 300px;height: 300px;background: url(../img/color1.png) center center ;position: absolute; top: 0;left: 100px; z-index: 1; transition: 3s;}
+
+.section4 .itemBox:hover .item-cd{transition: linear 3s; transform: rotate(960deg);left: 280px; 
+
+}
+
+.section4 .itemBox .cd-1{width: 100%;height: 100%;position: relative; background: none;}
+.section4 .itemBox .cd-1 .s-cd-1{width: 50px;height: 50px; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-50%); background: #fff; z-index: 3; border-radius: 50%;}
 
 
 
