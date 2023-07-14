@@ -133,10 +133,12 @@ let browser = 0;
 const sections = document.querySelectorAll('.section');
 const sectionCount = sections.length;
 let currentIndex = 0;
+let isScrolling = false;
+const scrollInterval = 800; // 연속 스크롤을 인식할 시간 간격 (800ms로 설정)
 
 document.addEventListener('wheel', function (e) {
+    e.preventDefault(); // 기본 스크롤 동작을 막습니다.
 
-    
     browser = window.navigator.userAgent.toLowerCase().indexOf('firefox');
 
     if (browser >= 0) {
@@ -145,14 +147,29 @@ document.addEventListener('wheel', function (e) {
         wheelDelta = e.wheelDelta;
     }
 
-    if (wheelDelta < 0 && currentIndex < sectionCount - 1) {
-        currentIndex++;
-    } else if (wheelDelta > 0 && currentIndex > 0) {
-        currentIndex--;
+    if (!isScrolling) {
+        if (wheelDelta < 0 && currentIndex < sectionCount - 1) {
+            currentIndex++;
+            scrollToSection();
+            startScrollTimer();
+        } else if (wheelDelta > 0 && currentIndex > 0) {
+            currentIndex--;
+            scrollToSection();
+            startScrollTimer();
+        }
     }
-
-    sections[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
+function scrollToSection() {
+    isScrolling = true;
+    sections[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function startScrollTimer() {
+    setTimeout(function () {
+        isScrolling = false;
+    }, scrollInterval);
+}
 
 /* function shuuuu() {
     let box = document.querySelectorAll('.s-box');
@@ -428,3 +445,28 @@ function rara(){
     }
 }
 rara()
+
+function cd(){
+    const slideBox = document.querySelector('.sec4-slideBox');
+    let currentIndex = 0;
+    const slideWidth = slideBox.clientWidth;
+    
+    slideBox.addEventListener('wheel', function (e) {
+      e.preventDefault(); // 기본 스크롤 동작을 막습니다.
+    
+      const delta = Math.sign(e.deltaY); // 휠 이벤트의 deltaY 값을 얻어와서 부호를 확인합니다.
+    
+      // 휠을 아래로 내릴 때
+      if (delta > 0 && currentIndex < slideBox.children.length - 1) {
+        currentIndex++;
+      }
+      // 휠을 위로 올릴 때
+      else if (delta < 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+    
+      let slideLeft = currentIndex * slideWidth * -1;
+    
+      slideBox.style.left = `${slideLeft*10}px`;
+    });
+}

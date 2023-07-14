@@ -89,23 +89,29 @@ html{overflow: hidden;}
 /* section4 */
 
 .section4 .con{width: 100vw; height: 100vh; display: flex; align-items: center;}
-.section4 .sec4-slideBox{width: 2160px; height: 600px;display: grid; padding: 0 30px; box-sizing: border-box; background: #fff;
+.section4 .sec4-slideBox{width: 2800px; height: 600px;display: grid; padding: 0 30px; box-sizing: border-box; background: #fff;
+  padding-right: 330px;
   grid-template-columns: repeat(3, 600px);
- 
+  position: relative;
+  left: 0; /* 초기 위치는 0으로 설정합니다. */
+  transition: left 0.5s ease; /* 왼쪽으로 이동할 때의 트랜지션 설정 */
 }
+
+ 
+
 .section4 .itemBox{width: 600px; height: 300px;display: flex;position: relative;}
 .section4 .item{width: 300px;height: 300px;background: #ddd;z-index: 2;}
 .section4 .itemBox4{margin-left: 300px;}
 .section4 .itemBox5{margin-left: 300px;}
 .section4 .itemBox6{margin-left: 300px;}
-.section4 .item-cd{border-radius: 50%; width: 300px;height: 300px;background: url(../img/color1.png) center center ;position: absolute; top: 0;left: 100px; z-index: 1; transition: 3s;}
+.section4 .item-cd{border-radius: 50%; width: 300px;height: 300px;background: url(../img/color1-3.png) center center ;position: absolute; top: 0;left: 100px; z-index: 1; transition: 3s;}
 
 .section4 .itemBox:hover .item-cd{transition: linear 3s; transform: rotate(960deg);left: 280px; 
 
 }
 
-.section4 .itemBox .cd-1{width: 100%;height: 100%;position: relative; background: none;}
-.section4 .itemBox .cd-1 .s-cd-1{width: 50px;height: 50px; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-50%); background: #fff; z-index: 3; border-radius: 50%;}
+.section4 .itemBox .cd-centerBox{width: 100%;height: 100%;position: relative; background: none;}
+.section4 .itemBox .cd-centerBox .cd-center{width: 30px;height: 30px; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-50%); background: #fff; z-index: 3; border-radius: 50%; border: 10px solid rgba(238, 238, 238, 0.738); box-shadow: 0 0 2px #000;}
 
 
 
